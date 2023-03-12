@@ -1,5 +1,15 @@
 # pharmascript
 
+A toy CRUD application for managing prescriptions, drugs, doctors and patients.
+
+WHAT I DID:
+
+1. Used ChatGPT to create JDL from a brief domain description
+2. Used the JDL to generate a Spring Boot/Angular application with JHipster
+3. Modified the MapStruct mappers, the TypeScript models, and the Angular components to add more fields to the Prescription list screen.
+
+---
+
 This application was generated using JHipster 7.9.3, you can find documentation and help at [https://www.jhipster.tech/documentation-archive/v7.9.3](https://www.jhipster.tech/documentation-archive/v7.9.3).
 
 ## Project Structure

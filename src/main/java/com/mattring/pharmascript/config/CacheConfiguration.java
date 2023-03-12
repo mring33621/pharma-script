@@ -46,6 +46,13 @@ public class CacheConfiguration {
             createCache(cm, com.mattring.pharmascript.domain.User.class.getName());
             createCache(cm, com.mattring.pharmascript.domain.Authority.class.getName());
             createCache(cm, com.mattring.pharmascript.domain.User.class.getName() + ".authorities");
+            createCache(cm, com.mattring.pharmascript.domain.Drug.class.getName());
+            createCache(cm, com.mattring.pharmascript.domain.Drug.class.getName() + ".prescriptions");
+            createCache(cm, com.mattring.pharmascript.domain.Patient.class.getName());
+            createCache(cm, com.mattring.pharmascript.domain.Patient.class.getName() + ".prescriptions");
+            createCache(cm, com.mattring.pharmascript.domain.Doctor.class.getName());
+            createCache(cm, com.mattring.pharmascript.domain.Doctor.class.getName() + ".prescriptions");
+            createCache(cm, com.mattring.pharmascript.domain.Prescription.class.getName());
             // jhipster-needle-caffeine-add-entry
         };
     }

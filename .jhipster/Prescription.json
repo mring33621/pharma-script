@@ -1,0 +1,55 @@
+{
+  "applications": "*",
+  "changelogDate": "20230307030234",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "prescription",
+  "fields": [
+    {
+      "fieldName": "dosageAmount",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "dosageInterval",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "createdDate",
+      "fieldType": "ZonedDateTime",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updatedDate",
+      "fieldType": "ZonedDateTime",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Prescription",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "drug",
+      "otherEntityRelationshipName": "prescription",
+      "relationshipName": "drug",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "patient",
+      "otherEntityRelationshipName": "prescription",
+      "relationshipName": "patient",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "doctor",
+      "otherEntityRelationshipName": "prescription",
+      "relationshipName": "doctor",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

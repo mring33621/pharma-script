@@ -1,0 +1,48 @@
+
+// Define entities
+entity Drug {
+    maker String required,
+    brandName String required,
+    genericName String required,
+    createdDate ZonedDateTime required,
+    updatedDate ZonedDateTime required
+}
+
+entity Patient {
+    firstName String required,
+    lastName String required,
+    birthdate LocalDate required,
+    createdDate ZonedDateTime required,
+    updatedDate ZonedDateTime required
+}
+
+entity Doctor {
+    firstName String required,
+    lastName String required,
+    licenseNumber String required,
+    createdDate ZonedDateTime required,
+    updatedDate ZonedDateTime required
+}
+
+entity Prescription {
+    dosageAmount Integer required,
+    dosageInterval Integer required,
+    createdDate ZonedDateTime required,
+    updatedDate ZonedDateTime required
+}
+
+// Define relationships
+relationship OneToMany {
+    Drug to Prescription,
+    Patient to Prescription,
+    Doctor to Prescription
+}
+
+// Add timestamp audit fields to all entities
+// timezone is set to UTC by default
+//auditDate createdDate
+//auditDate updatedDate
+
+dto * with mapstruct
+service * with serviceClass
+paginate * with pagination

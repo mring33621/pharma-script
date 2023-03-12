@@ -1,0 +1,48 @@
+{
+  "applications": "*",
+  "changelogDate": "20230307030231",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "drug",
+  "fields": [
+    {
+      "fieldName": "maker",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "brandName",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "genericName",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "createdDate",
+      "fieldType": "ZonedDateTime",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updatedDate",
+      "fieldType": "ZonedDateTime",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Drug",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "prescription",
+      "otherEntityRelationshipName": "drug",
+      "relationshipName": "prescription",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceClass"
+}

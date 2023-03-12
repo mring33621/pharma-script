@@ -1,0 +1,105 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-drug-heading" data-cy="DrugCreateUpdateHeading">Create or edit a Drug</h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" *ngIf="editForm.controls.id.value !== null">
+          <label class="form-label" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_maker">Maker</label>
+          <input type="text" class="form-control" name="maker" id="field_maker" data-cy="maker" formControlName="maker" />
+          <div *ngIf="editForm.get('maker')!.invalid && (editForm.get('maker')!.dirty || editForm.get('maker')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('maker')?.errors?.required"> This field is required. </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_brandName">Brand Name</label>
+          <input type="text" class="form-control" name="brandName" id="field_brandName" data-cy="brandName" formControlName="brandName" />
+          <div *ngIf="editForm.get('brandName')!.invalid && (editForm.get('brandName')!.dirty || editForm.get('brandName')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('brandName')?.errors?.required"> This field is required. </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_genericName">Generic Name</label>
+          <input
+            type="text"
+            class="form-control"
+            name="genericName"
+            id="field_genericName"
+            data-cy="genericName"
+            formControlName="genericName"
+          />
+          <div *ngIf="editForm.get('genericName')!.invalid && (editForm.get('genericName')!.dirty || editForm.get('genericName')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('genericName')?.errors?.required"> This field is required. </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_createdDate">Created Date</label>
+          <div class="d-flex">
+            <input
+              id="field_createdDate"
+              data-cy="createdDate"
+              type="datetime-local"
+              class="form-control"
+              name="createdDate"
+              formControlName="createdDate"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+          <div *ngIf="editForm.get('createdDate')!.invalid && (editForm.get('createdDate')!.dirty || editForm.get('createdDate')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('createdDate')?.errors?.required"> This field is required. </small>
+            <small class="form-text text-danger" [hidden]="!editForm.get('createdDate')?.errors?.datetimelocal">
+              This field should be a date and time.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_updatedDate">Updated Date</label>
+          <div class="d-flex">
+            <input
+              id="field_updatedDate"
+              data-cy="updatedDate"
+              type="datetime-local"
+              class="form-control"
+              name="updatedDate"
+              formControlName="updatedDate"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+          <div *ngIf="editForm.get('updatedDate')!.invalid && (editForm.get('updatedDate')!.dirty || editForm.get('updatedDate')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('updatedDate')?.errors?.required"> This field is required. </small>
+            <small class="form-text text-danger" [hidden]="!editForm.get('updatedDate')?.errors?.datetimelocal">
+              This field should be a date and time.
+            </small>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span>Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span>Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
