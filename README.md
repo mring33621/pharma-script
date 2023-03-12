@@ -2,11 +2,25 @@
 
 A toy CRUD application for managing prescriptions, drugs, doctors and patients.
 
+---
+
+NOTES:
+
+- I'm experimenting with rapid app generation using AI assistants and code generators.
+- This is one part of a multi-project pathfinding effort.
+
+---
+
 WHAT I DID:
 
 1. Used ChatGPT to create JDL from a brief domain description
 2. Used the JDL to generate a Spring Boot/Angular application with JHipster
 3. Modified the MapStruct mappers, the TypeScript models, and the Angular components to add more fields to the Prescription list screen.
+
+---
+
+EXAMPLE PAGE (my additions to the stock JHipster app are highlighted):
+![Sample Prescriptions Page](Sample-Prescriptions-Page.png)
 
 ---
 
